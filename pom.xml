@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>swagger-maven-example</groupId>
+    <artifactId>swagger-maven-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>1.16</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wordnik</groupId>
+            <artifactId>swagger-jaxrs_2.9.1</artifactId>
+            <version>1.2.0</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.github.kongchen</groupId>
+                <artifactId>swagger-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <configuration>
+                    <apiSources>
+                        <!--can speficy multi sources here to get multi format outputs-->
+                        <apiSource>
+                            <apiClasses>
+                                <apiClass>com.foo.bar.api.car.CarResourceV1</apiClass>
+                            </apiClasses>
+                            <apiPackage>com.foo.bar.api.garage</apiPackage>
+                            <apiVersion>v1</apiVersion>
+                            <basePath>http://host:port</basePath>
+                            <outputTemplate>markdown.mustache</outputTemplate>
+                            <outputPath>docV1.md</outputPath>
+                        </apiSource>
+                        <apiSource>
+                            <apiClasses>
+                                <apiClass>com.foo.bar.api.car.CarResourceV2</apiClass>
+                            </apiClasses>
+                            <apiVersion>v2</apiVersion>
+                            <basePath>http://host:port</basePath>
+                            <outputTemplate>markdown.mustache</outputTemplate>
+                            <outputPath>docV2.md</outputPath>
+                        </apiSource>
+                    </apiSources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>swagger-maven-plugin-mvn-repo</id>
+            <url>https://github.com/kongchen/swagger-maven-plugin/raw/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

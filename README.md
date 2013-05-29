@@ -10,6 +10,6 @@ mvn compile
 ```
 You'll get the outputs.
 
->If you wanna see something before clone, I've uploaded the output files at https://github.com/kongchen/swagger-maven-example/blob/master/generated/
+>If you wanna see something before clone, I've uploaded the output files, you can view swagger outputs at https://github.com/kongchen/swagger-maven-example/blob/master/generated/apidocs, and [view the HTML output document](http://htmlpreview.github.io/?https://raw.github.com/kongchen/swagger-maven-example/master/generated/strapdown.html) 
 
 *Enjoy!*

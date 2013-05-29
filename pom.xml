@@ -35,30 +35,14 @@
             <plugin>
                 <groupId>com.github.kongchen</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
-                <version>1.0</version>
+                <version>1.1-SNAPSHOT</version>
                 <configuration>
-                    <apiSources>
-                        <!--can specify multi sources here to get multi format outputs-->
-                        <apiSource>
-                            <apiClasses>
-                                <apiClass>com.foo.bar.api.car.CarResourceV1</apiClass>
-                            </apiClasses>
-                            <apiPackage>com.foo.bar.api.garage</apiPackage>
-                            <apiVersion>v1</apiVersion>
-                            <basePath>http://host:port</basePath>
-                            <outputTemplate>markdown.mustache</outputTemplate>
-                            <outputPath>docV1.md</outputPath>
-                        </apiSource>
-                        <apiSource>
-                            <apiClasses>
-                                <apiClass>com.foo.bar.api.car.CarResourceV2</apiClass>
-                            </apiClasses>
-                            <apiVersion>v2</apiVersion>
-                            <basePath>http://host:port</basePath>
-                            <outputTemplate>markdown.mustache</outputTemplate>
-                            <outputPath>docV2.md</outputPath>
-                        </apiSource>
-                    </apiSources>
+                    <!--<apiSources>com.foo.bar.api</apiSources>-->
+                    <apiVersion>v1</apiVersion>
+                    <basePath>http://host:port</basePath>
+                    <outputTemplate>strapdown.html.mustache</outputTemplate>
+                    <outputPath>generated/strapdown.html</outputPath>
+                    <swaggerDirectory>generated/apidocs</swaggerDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -71,4 +55,14 @@
             </plugin>
         </plugins>
     </build>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>com.github.kongchen</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

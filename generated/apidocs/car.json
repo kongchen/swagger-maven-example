@@ -1,0 +1,74 @@
+{
+  "apiVersion" : "v1",
+  "swaggerVersion" : "1.1",
+  "basePath" : "http://host:port",
+  "resourcePath" : "/car",
+  "apis" : [ {
+    "path" : "/car.{format}/{carId}",
+    "description" : "Operations about cars",
+    "operations" : [ {
+      "httpMethod" : "GET",
+      "summary" : "Find car by ID",
+      "notes" : "To get car info by car's Id",
+      "responseClass" : "Car",
+      "nickname" : "getCarById",
+      "parameters" : [ {
+        "name" : "carId",
+        "description" : "ID of car that needs to be fetched",
+        "paramType" : "path",
+        "allowableValues" : {
+          "valueType" : "RANGE",
+          "min" : 1.0,
+          "max" : 10.0,
+          "valueType" : "RANGE"
+        },
+        "required" : true,
+        "allowMultiple" : false,
+        "dataType" : "string"
+      } ],
+      "errorResponses" : [ {
+        "code" : 400,
+        "reason" : "Invalid ID supplied"
+      }, {
+        "code" : 404,
+        "reason" : "Car not found"
+      } ]
+    } ]
+  } ],
+  "models" : {
+    "Car" : {
+      "id" : "Car",
+      "properties" : {
+        "id" : {
+          "required" : true,
+          "notes" : "car's id",
+          "type" : "int"
+        },
+        "price" : {
+          "required" : true,
+          "notes" : "The price of the car",
+          "type" : "float"
+        },
+        "engine" : {
+          "required" : true,
+          "notes" : "The engine parameter of the car",
+          "type" : "string"
+        },
+        "mt" : {
+          "required" : true,
+          "notes" : "Indicate the car is MT or AT",
+          "type" : "boolean"
+        },
+        "brand" : {
+          "required" : true,
+          "notes" : "The brand of the car",
+          "type" : "string"
+        },
+        "notes" : {
+          "notes" : "Any other comments for the car",
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

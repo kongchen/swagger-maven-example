@@ -1,0 +1,15 @@
+{
+  "apiVersion" : "v1",
+  "swaggerVersion" : "1.1",
+  "basePath" : "http://host:port",
+  "apis" : [ {
+    "path" : "/v2/car",
+    "description" : ""
+  }, {
+    "path" : "/garage",
+    "description" : ""
+  }, {
+    "path" : "/car",
+    "description" : ""
+  } ]
+}

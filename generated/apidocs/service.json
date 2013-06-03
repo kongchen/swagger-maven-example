@@ -6,10 +6,10 @@
     "path" : "/v2/car",
     "description" : ""
   }, {
-    "path" : "/garage",
+    "path" : "/car",
     "description" : ""
   }, {
-    "path" : "/car",
+    "path" : "/garage",
     "description" : ""
   } ]
 }

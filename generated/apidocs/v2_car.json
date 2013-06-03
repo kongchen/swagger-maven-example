@@ -12,6 +12,13 @@
       "notes" : "To get car info by car's Id",
       "responseClass" : "Car",
       "nickname" : "getCarById",
+      "errorResponses" : [ {
+        "code" : 400,
+        "reason" : "Invalid ID supplied"
+      }, {
+        "code" : 404,
+        "reason" : "Car not found"
+      } ],
       "parameters" : [ {
         "name" : "carId",
         "description" : "ID of car that needs to be fetched",
@@ -25,13 +32,6 @@
         "required" : true,
         "allowMultiple" : false,
         "dataType" : "string"
-      } ],
-      "errorResponses" : [ {
-        "code" : 400,
-        "reason" : "Invalid ID supplied"
-      }, {
-        "code" : 404,
-        "reason" : "Car not found"
       } ]
     } ]
   } ],

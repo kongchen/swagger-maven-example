@@ -64,65 +64,12 @@ To get car info by car's Id
 
 
 - - -
-### 2. /garage
-#### Overview
-Operations about garages
-
-#### 2.1 `/garage.{format}/{garageId}`
-##### 2.1.1 getGarageById
-**GET** `/garage.{format}/{garageId}`
-
-Find garages by Id
-To get garage info
-
-###### URL
-    http://host:port/garage.{format}/{garageId}
-###### Parameters
-- path
-
-    <table border="1">
-        <tr>
-            <th>Parameter</th>
-            <th>Required</th>
-            <th>Description</th>
-            <th>Data Type</th>
-        </tr>
-        <tr>
-            <th>garageId</th>
-            <td>true</td>
-            <td>ID of garage that needs to be fetched</td>
-            <td>string</td>
-        </tr>
-    </table>
-
-###### Response
-[Garage](#Garage)
-
-
-###### Errors
-<table border="1">
-    <tr>
-        <th>Status Code</th>
-        <th>Reason</th>
-    </tr>
-        <tr>
-            <td>400</td>
-            <td>Invalid ID supplied</td>
-        </tr>
-        <tr>
-            <td>404</td>
-            <td>Garage not found</td>
-        </tr>
-</table>
-
-
-- - -
-### 3. /car
+### 2. /car
 #### Overview
 Operations about cars
 
-#### 3.1 `/car.{format}/{carId}`
-##### 3.1.1 getCarById
+#### 2.1 `/car.{format}/{carId}`
+##### 2.1.1 getCarById
 **GET** `/car.{format}/{carId}`
 
 Find car by ID
@@ -165,6 +112,59 @@ To get car info by car's Id
         <tr>
             <td>404</td>
             <td>Car not found</td>
+        </tr>
+</table>
+
+
+- - -
+### 3. /garage
+#### Overview
+Operations about garages
+
+#### 3.1 `/garage.{format}/{garageId}`
+##### 3.1.1 getGarageById
+**GET** `/garage.{format}/{garageId}`
+
+Find garages by Id
+To get garage info
+
+###### URL
+    http://host:port/garage.{format}/{garageId}
+###### Parameters
+- path
+
+    <table border="1">
+        <tr>
+            <th>Parameter</th>
+            <th>Required</th>
+            <th>Description</th>
+            <th>Data Type</th>
+        </tr>
+        <tr>
+            <th>garageId</th>
+            <td>true</td>
+            <td>ID of garage that needs to be fetched</td>
+            <td>string</td>
+        </tr>
+    </table>
+
+###### Response
+[Garage](#Garage)
+
+
+###### Errors
+<table border="1">
+    <tr>
+        <th>Status Code</th>
+        <th>Reason</th>
+    </tr>
+        <tr>
+            <td>400</td>
+            <td>Invalid ID supplied</td>
+        </tr>
+        <tr>
+            <td>404</td>
+            <td>Garage not found</td>
         </tr>
 </table>
 

@@ -37,12 +37,16 @@
                 <artifactId>swagger-maven-plugin</artifactId>
                 <version>1.1-SNAPSHOT</version>
                 <configuration>
-                    <!--<apiSources>com.foo.bar.api</apiSources>-->
-                    <apiVersion>v1</apiVersion>
-                    <basePath>http://host:port</basePath>
-                    <outputTemplate>strapdown.html.mustache</outputTemplate>
-                    <outputPath>generated/strapdown.html</outputPath>
-                    <swaggerDirectory>generated/apidocs</swaggerDirectory>
+                    <apiSources>
+                        <apiSource>
+                            <locations>com.foo.bar.api</locations>
+                            <apiVersion>v1</apiVersion>
+                            <basePath>http://host:port/apis</basePath>
+                            <outputTemplate>strapdown.html.mustache</outputTemplate>
+                            <outputPath>generated/strapdown.html</outputPath>
+                            <swaggerDirectory>generated/apidocs</swaggerDirectory>
+                        </apiSource>
+                    </apiSources>
                 </configuration>
                 <executions>
                     <execution>

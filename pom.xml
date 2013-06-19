@@ -43,8 +43,8 @@
                             <apiVersion>v1</apiVersion>
                             <basePath>http://host:port/apis</basePath>
                             <outputTemplate>strapdown.html.mustache</outputTemplate>
-                            <outputPath>generated/strapdown.html</outputPath>
-                            <swaggerDirectory>generated/apidocs</swaggerDirectory>
+                            <outputPath>${project.build.directory}/${project.build.finalName}/docs/index.html</outputPath>
+                            <swaggerDirectory>${project.build.directory}/${project.build.finalName}/docs/apidocs</swaggerDirectory>
                         </apiSource>
                     </apiSources>
                 </configuration>

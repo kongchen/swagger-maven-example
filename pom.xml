@@ -35,15 +35,15 @@
             <plugin>
                 <groupId>com.github.kongchen</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
-                <version>1.1-SNAPSHOT</version>
+                <version>1.1</version>
                 <configuration>
                     <apiSources>
                         <apiSource>
                             <locations>com.foo.bar.api</locations>
                             <apiVersion>v1</apiVersion>
                             <basePath>http://host:port/apis</basePath>
-                            <outputTemplate>strapdown.html.mustache</outputTemplate>
-                            <outputPath>generated/strapdown.html</outputPath>
+                            <outputTemplate>https://raw.github.com/kongchen/api-doc-template/master/v1.1/markdown.mustache</outputTemplate>
+                            <outputPath>generated/doc.md</outputPath>
                             <swaggerDirectory>generated/apidocs</swaggerDirectory>
                         </apiSource>
                     </apiSources>
@@ -61,12 +61,12 @@
     </build>
     <pluginRepositories>
         <pluginRepository>
-            <id>com.github.kongchen</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
             <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <enabled>false</enabled>
             </snapshots>
+            <id>central</id>
+            <name>bintray-plugins</name>
+            <url>http://dl.bintray.com/kongchen/maven</url>
         </pluginRepository>
     </pluginRepositories>
 </project>

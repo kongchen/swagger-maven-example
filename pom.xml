@@ -61,6 +61,14 @@
     </build>
     <pluginRepositories>
         <pluginRepository>
+            <id>com.github.kongchen</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>

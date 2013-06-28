@@ -42,8 +42,12 @@
                             <locations>com.foo.bar.api</locations>
                             <apiVersion>v1</apiVersion>
                             <basePath>http://host:port/apis</basePath>
-                            <outputTemplate>https://raw.github.com/kongchen/api-doc-template/master/v1.1/markdown.mustache</outputTemplate>
-                            <outputPath>generated/doc.md</outputPath>
+                            <!-- Need to download markdown.mustache first to use strapdown.html.mustache -->
+                            <outputTemplate>
+                                https://raw.github.com/kongchen/api-doc-template/master/v1.1/strapdown.html.mustache
+                            </outputTemplate>
+                            <!-- Note that `generated` is a existed directory -->
+                            <outputPath>generated/strapdown.html</outputPath>
                             <swaggerDirectory>generated/apidocs</swaggerDirectory>
                         </apiSource>
                     </apiSources>
@@ -61,18 +65,10 @@
     </build>
     <pluginRepositories>
         <pluginRepository>
-            <id>com.github.kongchen</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <id>central</id>
+            <id>bintray-central</id>
             <name>bintray-plugins</name>
             <url>http://dl.bintray.com/kongchen/maven</url>
         </pluginRepository>

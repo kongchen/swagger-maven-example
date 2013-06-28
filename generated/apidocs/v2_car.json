@@ -1,10 +1,10 @@
 {
   "apiVersion" : "v1",
   "swaggerVersion" : "1.1",
-  "basePath" : "http://host:port",
+  "basePath" : "http://host:port/apis",
   "resourcePath" : "/v2/car",
   "apis" : [ {
-    "path" : "/v2/car.{format}/{carId}",
+    "path" : "/v2/car/{carId}",
     "description" : "Operations about cars",
     "operations" : [ {
       "httpMethod" : "GET",

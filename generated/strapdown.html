@@ -6,24 +6,24 @@
 #API Document
 
 
-## BasePath: http://host:port
+## BasePath: http://host:port/apis
 
 ## Api Version: v1
 
 ## Resources
-### 1. /v2/car
+### 1. /car
 #### Overview
 Operations about cars
 
-#### 1.1 `/v2/car.{format}/{carId}`
+#### 1.1 `/car/{carId}`
 ##### 1.1.1 getCarById
-**GET** `/v2/car.{format}/{carId}`
+**GET** `/car/{carId}`
 
 Find car by ID
 To get car info by car's Id
 
 ###### URL
-    http://host:port/v2/car.{format}/{carId}
+    http://host:port/apis/car/{carId}
 ###### Parameters
 - path
 
@@ -64,72 +64,19 @@ To get car info by car's Id
 
 
 - - -
-### 2. /car
-#### Overview
-Operations about cars
-
-#### 2.1 `/car.{format}/{carId}`
-##### 2.1.1 getCarById
-**GET** `/car.{format}/{carId}`
-
-Find car by ID
-To get car info by car's Id
-
-###### URL
-    http://host:port/car.{format}/{carId}
-###### Parameters
-- path
-
-    <table border="1">
-        <tr>
-            <th>Parameter</th>
-            <th>Required</th>
-            <th>Description</th>
-            <th>Data Type</th>
-        </tr>
-        <tr>
-            <th>carId</th>
-            <td>true</td>
-            <td>ID of car that needs to be fetched</td>
-            <td>string</td>
-        </tr>
-    </table>
-
-###### Response
-[Car](#Car)
-
-
-###### Errors
-<table border="1">
-    <tr>
-        <th>Status Code</th>
-        <th>Reason</th>
-    </tr>
-        <tr>
-            <td>400</td>
-            <td>Invalid ID supplied</td>
-        </tr>
-        <tr>
-            <td>404</td>
-            <td>Car not found</td>
-        </tr>
-</table>
-
-
-- - -
-### 3. /garage
+### 2. /garage
 #### Overview
 Operations about garages
 
-#### 3.1 `/garage.{format}/{garageId}`
-##### 3.1.1 getGarageById
-**GET** `/garage.{format}/{garageId}`
+#### 2.1 `/garage/{garageId}`
+##### 2.1.1 getGarageById
+**GET** `/garage/{garageId}`
 
 Find garages by Id
 To get garage info
 
 ###### URL
-    http://host:port/garage.{format}/{garageId}
+    http://host:port/apis/garage/{garageId}
 ###### Parameters
 - path
 
@@ -170,6 +117,59 @@ To get garage info
 
 
 - - -
+### 3. /v2/car
+#### Overview
+Operations about cars
+
+#### 3.1 `/v2/car/{carId}`
+##### 3.1.1 getCarById
+**GET** `/v2/car/{carId}`
+
+Find car by ID
+To get car info by car's Id
+
+###### URL
+    http://host:port/apis/v2/car/{carId}
+###### Parameters
+- path
+
+    <table border="1">
+        <tr>
+            <th>Parameter</th>
+            <th>Required</th>
+            <th>Description</th>
+            <th>Data Type</th>
+        </tr>
+        <tr>
+            <th>carId</th>
+            <td>true</td>
+            <td>ID of car that needs to be fetched</td>
+            <td>string</td>
+        </tr>
+    </table>
+
+###### Response
+[Car](#Car)
+
+
+###### Errors
+<table border="1">
+    <tr>
+        <th>Status Code</th>
+        <th>Reason</th>
+    </tr>
+        <tr>
+            <td>400</td>
+            <td>Invalid ID supplied</td>
+        </tr>
+        <tr>
+            <td>404</td>
+            <td>Car not found</td>
+        </tr>
+</table>
+
+
+- - -
 
 ## Data Types
 
@@ -185,44 +185,44 @@ To get garage info
         <th>notes</th>
     </tr>
         <tr>
-            <th>id</th>
             <td>int</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>car's id</td>
         </tr>
         <tr>
-            <th>price</th>
             <td>float</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>The price of the car</td>
         </tr>
         <tr>
-            <th>engine</th>
             <td>string</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>The engine parameter of the car</td>
         </tr>
         <tr>
-            <th>mt</th>
             <td>boolean</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>Indicate the car is MT or AT</td>
         </tr>
         <tr>
-            <th>brand</th>
             <td>string</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>The brand of the car</td>
         </tr>
         <tr>
-            <th>notes</th>
             <td>string</td>
             <td>optional</td>
+            <td>-</td>
             <td>-</td>
             <td>Any other comments for the car</td>
         </tr>
@@ -241,37 +241,37 @@ To get garage info
         <th>notes</th>
     </tr>
         <tr>
-            <th>id</th>
             <td>int</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>Garage's id</td>
         </tr>
         <tr>
-            <th>address</th>
             <td>string</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>The address of the garage</td>
         </tr>
         <tr>
-            <th>description</th>
             <td>string</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>The description of the garage</td>
         </tr>
         <tr>
-            <th>name</th>
             <td>string</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>The name of the garage</td>
         </tr>
         <tr>
-            <th>telephone</th>
             <td>string</td>
             <td>required</td>
+            <td>-</td>
             <td>-</td>
             <td>The telephone of the garage</td>
         </tr>

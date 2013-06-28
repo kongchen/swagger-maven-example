@@ -24,6 +24,27 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <configuration>
+                            <target name="get markdown.mustache">
+                            <!-- Need to download markdown.mustache first to use strapdown.html.mustache -->
+                            <get dest=".">
+                                <url url="https://raw.github.com/kongchen/api-doc-template/master/v1.1/markdown.mustache"/>
+                            </get>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
@@ -42,11 +63,9 @@
                             <locations>com.foo.bar.api</locations>
                             <apiVersion>v1</apiVersion>
                             <basePath>http://host:port/apis</basePath>
-                            <!-- Need to download markdown.mustache first to use strapdown.html.mustache -->
                             <outputTemplate>
                                 https://raw.github.com/kongchen/api-doc-template/master/v1.1/strapdown.html.mustache
                             </outputTemplate>
-                            <!-- Note that `generated` is a existed directory -->
                             <outputPath>generated/strapdown.html</outputPath>
                             <swaggerDirectory>generated/apidocs</swaggerDirectory>
                         </apiSource>

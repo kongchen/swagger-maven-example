@@ -1,9 +1,8 @@
-package com.foo.bar.model;
+package com.foo.bar.model.v2;
 
-import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 
-import java.util.List;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,7 +10,7 @@ import java.util.List;
  * @author: chekong
  * 05/14/2013
  */
-@ApiModel(value = "car")
+@XmlRootElement(name = "nEwcar")
 public class Car {
     @ApiModelProperty(required = true, value = "car's id")
     private int id;
@@ -25,22 +24,8 @@ public class Car {
     @ApiModelProperty(required = true, value = "Indicate the car is MT or AT")
     private boolean mt;
 
-    @ApiModelProperty(required = true, value = "The price of the car", access = "readOnly")
-    private float price;
-
     @ApiModelProperty(required = false, value = "Any other comments for the car")
     private String notes;
-
-    @ApiModelProperty(required = false, value = "Repair history")
-    private List<String> repairHistory;
-
-    public List<String> getRepairHistory() {
-        return repairHistory;
-    }
-
-    public void setRepairHistory(List<String> repairHistory) {
-        this.repairHistory = repairHistory;
-    }
 
     public String getBrand() {
         return brand;
@@ -64,14 +49,6 @@ public class Car {
 
     public void setMt(boolean mt) {
         this.mt = mt;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
     }
 
     public String getNotes() {

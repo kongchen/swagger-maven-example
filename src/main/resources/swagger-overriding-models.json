@@ -1,0 +1,7 @@
+{
+	"mapping" :
+	{
+		"className" : "javax.ws.rs.core.MediaType",
+		"jsonString" : "{\"id\": \"MediaType\",\"properties\": {\"value\": {\"required\": true, \"description\": \"Content-Type in HTTP request/response header\", \"notes\": \"Add any notes you like here\", \"type\": \"string\", \"format\": \"*/*\"}}}"
+	}
+}

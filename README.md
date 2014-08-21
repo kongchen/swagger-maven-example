@@ -11,7 +11,7 @@ mvn compile
 You'll get the outputs.
 
 >If you wanna see something before clone, I've uploaded the output files, you can view swagger outputs at 
-[here](https://github.com/kongchen/swagger-maven-example/blob/master/generated/apidocs), and 
-[view the HTML output document](http://htmlpreview.github.io/?https://raw.github.com/kongchen/swagger-maven-example/master/generated/strapdown.html) 
+[here](https://github.com/kongchen/swagger-maven-example/blob/master/generated/swagger-ui), and 
+[view the HTML output document](http://htmlpreview.github.io/?https://raw.github.com/kongchen/swagger-maven-example/master/generated/document.html) 
 
 *Enjoy!*

@@ -8,7 +8,7 @@ Clone the example in local and then launch:
 ```
 mvn compile
 ```
-You'll get the outputs.
+You'll get the outputs in the */generated* folder.
 
 >If you wanna see something before clone, I've uploaded the output files, you can view swagger outputs at 
 [here](https://github.com/kongchen/swagger-maven-example/blob/master/generated/swagger-ui), and 

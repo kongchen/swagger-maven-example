@@ -1,5 +1,5 @@
 /**
- *  Copyright 2013 Wordnik, Inc.
+ *  Copyright 2014 Reverb Technologies, Inc.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import com.wordnik.swagger.annotations.*;
 import com.github.kongchen.swagger.sample.wordnik.data.UserData;
 import com.github.kongchen.swagger.sample.wordnik.model.User;
 import com.github.kongchen.swagger.sample.wordnik.exception.ApiException;
-import com.github.kongchen.swagger.sample.wordnik.exception.NotFoundException;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.*;
@@ -107,7 +106,7 @@ public class UserResource {
     if (null != user) {
       return Response.ok().entity(user).build();
     } else {
-      throw new NotFoundException(404, "User not found");
+      throw new com.github.kongchen.swagger.sample.wordnik.exception.NotFoundException(404, "User not found");
     }
   }
 

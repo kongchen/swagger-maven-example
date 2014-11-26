@@ -4,914 +4,1836 @@
 
 <xmp theme="united" style="display:none;">
 #Swagger Maven Plugin Sample
+
+
+## HTTP | HTTPS://petstore.swagger.wordnik.com/api
+
+
 This is a sample for swagger-maven-plugin
 
-Terms of Service: [http://www.github.com/kongchen/swagger-maven-plugin](http://www.github.com/kongchen/swagger-maven-plugin)
 
-Contact: [kongchen#gmail$com](mailto:kongchen#gmail$com)
-
-License: [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+[**Contact the developer**](mailto:kongchen@gmail.com)
 
 
+**Version** v1
 
-BasePath: http://petstore.swagger.wordnik.com/api
+[**Terms of Service**](http://www.github.com/kongchen/swagger-maven-plugin)
 
-Api Version: v1
+[**Apache 2.0**](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-## APIs
-### /pet
 
-#### **PUT** `/pet`
-##### updatePet 
+
+
+
+
+
+
+# APIs
+
+
+## /pet
+
+
+
+
+### PUT
 
 Update an existing pet
 
 
-###### URL
-http://petstore.swagger.wordnik.com/api/pet
-###### Parameters
-- body
+
+
+
+
+#### Security
+
+
+
+
+* petstore_auth
+   * write:pets
+   * read:pets
+
+
+
+
+#### Request
+
+
+**Content-Type: ** application/json, application/xml
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>body</th>
-        <td>true</td>
-        <td>Pet object that needs to be added to the store</td>
-        <td><a href="#Pet">Pet</a></td>
-    </tr>
+
+
+
+<tr>
+    <th>body</th>
+    <td>body</td>
+    <td>no</td>
+    <td>Pet object that needs to be added to the store</td>
+    <td> - </td>
+
+    <td>
+    
+    <a href="#/definitions/Pet">Pet</a> 
+    </td>
+
+</tr>
+
+
 </table>
 
-###### Response
-[](#)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 400    | Invalid ID supplied | - |
-| 404    | Pet not found | - |
-| 405    | Validation exception | - |
+| 400    | Invalid ID supplied |  - |
+| 404    | Pet not found |  - |
+| 405    | Validation exception |  - |
 
 
-- - -
-#### **POST** `/pet`
-##### addPet 
+
+
+
+### POST
+
 
 Add a new pet to the store
 
 
-###### URL
-http://petstore.swagger.wordnik.com/api/pet
-###### Parameters
-- body
+
+
+
+
+#### Security
+
+
+
+
+* petstore_auth
+   * write:pets
+   * read:pets
+
+
+
+
+#### Request
+
+
+**Content-Type: ** application/json, application/xml
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>body</th>
-        <td>true</td>
-        <td>Pet object that needs to be added to the store</td>
-        <td><a href="#Pet">Pet</a></td>
-    </tr>
+
+
+
+<tr>
+    <th>body</th>
+    <td>body</td>
+    <td>no</td>
+    <td>Pet object that needs to be added to the store</td>
+    <td> - </td>
+
+    <td>
+    
+    <a href="#/definitions/Pet">Pet</a> 
+    </td>
+
+</tr>
+
+
 </table>
 
-###### Response
-[](#)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 405    | Invalid input | - |
+| 405    | Invalid input |  - |
 
 
-- - -
-#### **GET** `/pet/findByStatus`
-##### findPetsByStatus 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /pet/findByStatus
+
+
+### GET
 
 Finds Pets by status
+
 Multiple status values can be provided with comma seperated strings
 
-###### URL
-http://petstore.swagger.wordnik.com/api/pet/findByStatus
-###### Parameters
-- query
+
+
+
+#### Security
+
+
+
+
+* petstore_auth
+   * write:pets
+   * read:pets
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>status</th>
-        <td>true</td>
-        <td>Status values that need to be considered for filter</td>
-        <td>string</td>
-    </tr>
-</table>
-- body
 
-<table border="1">
-    <tr>
-        <th>Parameter</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Data Type</th>
-    </tr>
-    <tr>
-        <th>body</th>
-        <td>false</td>
-        <td></td>
-        <td><a href="#QueryResultBean">QueryResultBean</a></td>
-    </tr>
+
+
+<tr>
+    <th>status</th>
+    <td>query</td>
+    <td>no</td>
+    <td>Status values that need to be considered for filter</td>
+    <td> - </td>
+
+    
+            <td>Array[string] (multi)</td>
+    
+
+</tr>
+
+
 </table>
 
-###### Response
-[List[Pet]](#Pet)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 400    | Invalid status value | - |
+| 200    | successful operation | Array[<a href="#/definitions/Pet">Pet</a>]|
+| 400    | Invalid status value |  - |
 
 
-- - -
-#### **GET** `/pet/findByTags`
-##### findPetsByTags 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /pet/findByTags
+
+
+### GET
 
 Finds Pets by tags
+
 Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 for testing.
 
-###### URL
-http://petstore.swagger.wordnik.com/api/pet/findByTags
-###### Parameters
-- query
+
+
+
+#### Security
+
+
+
+
+* petstore_auth
+   * write:pets
+   * read:pets
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>tags</th>
-        <td>true</td>
-        <td>Tags to filter by</td>
-        <td>string</td>
-    </tr>
+
+
+
+<tr>
+    <th>tags</th>
+    <td>query</td>
+    <td>no</td>
+    <td>Tags to filter by</td>
+    <td> - </td>
+
+    
+            <td>Array[string] (multi)</td>
+    
+
+</tr>
+
+
 </table>
 
-###### Response
-[List[Pet]](#Pet)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 400    | Invalid tag value | - |
+| 200    | successful operation | Array[<a href="#/definitions/Pet">Pet</a>]|
+| 400    | Invalid tag value |  - |
 
 
-- - -
-#### **GET** `/pet/{petId}`
-##### getPetById 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /pet/{petId}
+
+
+### GET
 
 Find pet by ID
-Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions
 
-###### URL
-http://petstore.swagger.wordnik.com/api/pet/{petId}
-###### Parameters
-- path
-
-<table border="1">
-    <tr>
-        <th>Parameter</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Data Type</th>
-    </tr>
-    <tr>
-        <th>petId</th>
-        <td>true</td>
-        <td>ID of pet that needs to be fetched</td>
-        <td>string</td>
-    </tr>
-</table>
-
-###### Response
-[Pet](#Pet)
+Returns a pet when ID &lt; 10.  ID &gt; 10 or nonintegers will simulate API error conditions
 
 
-###### Errors
-| Status Code | Reason      | Response Model |
-|-------------|-------------|----------------|
-| 400    | Invalid ID supplied | - |
-| 404    | Pet not found | - |
 
 
-- - -
-### /store
+#### Security
 
-#### **GET** `/store/order/{orderId}`
-##### getOrderById 
 
-Find purchase order by ID
-For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions
 
-###### URL
-http://petstore.swagger.wordnik.com/api/store/order/{orderId}
-###### Parameters
-- path
+
+* api_key
+
+
+
+
+* petstore_auth
+   * write:pets
+   * read:pets
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>orderId</th>
-        <td>true</td>
-        <td>ID of pet that needs to be fetched</td>
-        <td>string</td>
-    </tr>
+
+
+
+<tr>
+    <th>petId</th>
+    <td>path</td>
+    <td>yes</td>
+    <td>ID of pet that needs to be fetched</td>
+    <td> - </td>
+
+    
+            <td>integer (int64)</td>
+    
+
+</tr>
+
+
 </table>
 
-###### Response
-[Order](#Order)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 400    | Invalid ID supplied | - |
-| 404    | Order not found | - |
+| 200    | successful operation | <a href="#/definitions/Pet">Pet</a>|
+| 400    | Invalid ID supplied |  - |
+| 404    | Pet not found |  - |
 
 
-- - -
-#### **DELETE** `/store/order/{orderId}`
-##### deleteOrder 
 
-Delete purchase order by ID
-For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors
 
-###### URL
-http://petstore.swagger.wordnik.com/api/store/order/{orderId}
-###### Parameters
-- path
+
+
+
+### POST
+
+
+Updates a pet in the store with form data
+
+
+
+
+
+
+#### Security
+
+
+
+
+* petstore_auth
+   * write:pets
+   * read:pets
+
+
+
+
+#### Request
+
+
+**Content-Type: ** application/x-www-form-urlencoded
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>orderId</th>
-        <td>true</td>
-        <td>ID of the order that needs to be deleted</td>
-        <td>string</td>
-    </tr>
+
+
+
+<tr>
+    <th>petId</th>
+    <td>path</td>
+    <td>yes</td>
+    <td>ID of pet that needs to be updated</td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>name</th>
+    <td>formData</td>
+    <td>yes</td>
+    <td>Updated name of the pet</td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>status</th>
+    <td>formData</td>
+    <td>yes</td>
+    <td>Updated status of the pet</td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+
 </table>
 
-###### Response
-[](#)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 400    | Invalid ID supplied | - |
-| 404    | Order not found | - |
+| 405    | Invalid input |  - |
 
 
-- - -
-#### **POST** `/store/order`
-##### placeOrder 
+
+
+
+
+### DELETE
+
+Deletes a pet
+
+
+
+
+
+
+#### Security
+
+
+
+
+* petstore_auth
+   * write:pets
+   * read:pets
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
+    </tr>
+
+
+
+<tr>
+    <th>api_key</th>
+    <td>header</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>petId</th>
+    <td>path</td>
+    <td>yes</td>
+    <td>Pet id to delete</td>
+    <td> - </td>
+
+    
+            <td>integer (int64)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 400    | Invalid pet value |  - |
+
+
+
+
+
+
+
+
+
+
+
+
+## /store/order
+
+
+
+
+
+
+### POST
+
 
 Place an order for a pet
 
 
-###### URL
-http://petstore.swagger.wordnik.com/api/store/order
-###### Parameters
-- body
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>body</th>
-        <td>true</td>
-        <td>order placed for purchasing the pet</td>
-        <td><a href="#Order">Order</a></td>
-    </tr>
+
+
+
+<tr>
+    <th>body</th>
+    <td>body</td>
+    <td>no</td>
+    <td>order placed for purchasing the pet</td>
+    <td> - </td>
+
+    <td>
+    
+    <a href="#/definitions/Order">Order</a> 
+    </td>
+
+</tr>
+
+
 </table>
 
-###### Response
-[Order](#Order)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 400    | Invalid Order | - |
+| 200    | successful operation | <a href="#/definitions/Order">Order</a>|
+| 400    | Invalid Order |  - |
 
 
-- - -
-### /user
-
-#### **GET** `/user/{username}`
-##### getUserByName 
-
-Get user by user name
 
 
-###### URL
-http://petstore.swagger.wordnik.com/api/user/{username}
-###### Parameters
-- path
+
+
+
+
+
+
+
+
+
+
+
+## /store/order/{orderId}
+
+
+### GET
+
+Find purchase order by ID
+
+For valid response try integer IDs with value &lt;= 5 or &gt; 10. Other values will generated exceptions
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>username</th>
-        <td>true</td>
-        <td>The name that needs to be fetched. Use user1 for testing.</td>
-        <td>string</td>
-    </tr>
+
+
+
+<tr>
+    <th>orderId</th>
+    <td>path</td>
+    <td>yes</td>
+    <td>ID of pet that needs to be fetched</td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+
 </table>
 
-###### Response
-[User](#User)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 400    | Invalid username supplied | - |
-| 404    | User not found | - |
+| 200    | successful operation | <a href="#/definitions/Order">Order</a>|
+| 400    | Invalid ID supplied |  - |
+| 404    | Order not found |  - |
 
 
-- - -
-#### **PUT** `/user/{username}`
-##### updateUser 
 
-Updated user
-This can only be done by the logged in user.
 
-###### URL
-http://petstore.swagger.wordnik.com/api/user/{username}
-###### Parameters
-- path
 
-<table border="1">
-    <tr>
-        <th>Parameter</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Data Type</th>
-    </tr>
-    <tr>
-        <th>username</th>
-        <td>true</td>
-        <td>name that need to be deleted</td>
-        <td>string</td>
-    </tr>
-</table>
-- body
+
+
+
+
+### DELETE
+
+Delete purchase order by ID
+
+For valid response try integer IDs with value &lt; 1000. Anything above 1000 or nonintegers will generate API errors
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>body</th>
-        <td>true</td>
-        <td>Updated user object</td>
-        <td><a href="#User">User</a></td>
-    </tr>
+
+
+
+<tr>
+    <th>orderId</th>
+    <td>path</td>
+    <td>yes</td>
+    <td>ID of the order that needs to be deleted</td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+
 </table>
 
-###### Response
-[](#)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 400    | Invalid user supplied | - |
-| 404    | User not found | - |
+| 400    | Invalid ID supplied |  - |
+| 404    | Order not found |  - |
 
 
-- - -
-#### **DELETE** `/user/{username}`
-##### deleteUser 
-
-Delete user
-This can only be done by the logged in user.
-
-###### URL
-http://petstore.swagger.wordnik.com/api/user/{username}
-###### Parameters
-- path
-
-<table border="1">
-    <tr>
-        <th>Parameter</th>
-        <th>Required</th>
-        <th>Description</th>
-        <th>Data Type</th>
-    </tr>
-    <tr>
-        <th>username</th>
-        <td>true</td>
-        <td>The name that needs to be deleted</td>
-        <td>string</td>
-    </tr>
-</table>
-
-###### Response
-[](#)
 
 
-###### Errors
-| Status Code | Reason      | Response Model |
-|-------------|-------------|----------------|
-| 400    | Invalid username supplied | - |
-| 404    | User not found | - |
 
 
-- - -
-#### **POST** `/user`
-##### createUser 
+
+
+
+
+
+
+## /user
+
+
+
+
+
+
+### POST
+
 
 Create user
+
 This can only be done by the logged in user.
 
-###### URL
-http://petstore.swagger.wordnik.com/api/user
-###### Parameters
-- body
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>body</th>
-        <td>true</td>
-        <td>Created user object</td>
-        <td><a href="#User">User</a></td>
-    </tr>
+
+
+
+<tr>
+    <th>body</th>
+    <td>body</td>
+    <td>no</td>
+    <td>Created user object</td>
+    <td> - </td>
+
+    <td>
+    
+    <a href="#/definitions/User">User</a> 
+    </td>
+
+</tr>
+
+
 </table>
 
-###### Response
-[](#)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
+| default    | successful operation |  - |
 
 
-- - -
-#### **POST** `/user/createWithArray`
-##### createUsersWithArrayInput 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /user/createWithArray
+
+
+
+
+
+
+### POST
+
 
 Creates list of users with given input array
 
 
-###### URL
-http://petstore.swagger.wordnik.com/api/user/createWithArray
-###### Parameters
-- body
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>body</th>
-        <td>true</td>
-        <td>List of user object</td>
-        <td><a href="#User">Array[User]</a></td>
-    </tr>
+
+
+
+<tr>
+    <th>body</th>
+    <td>body</td>
+    <td>no</td>
+    <td>List of user object</td>
+    <td> - </td>
+
+    <td>
+    Array[<a href="#/definitions/User">User</a>]
+    
+    </td>
+
+</tr>
+
+
 </table>
 
-###### Response
-[](#)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
+| default    | successful operation |  - |
 
 
-- - -
-#### **POST** `/user/createWithList`
-##### createUsersWithListInput 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /user/createWithList
+
+
+
+
+
+
+### POST
+
 
 Creates list of users with given input array
 
 
-###### URL
-http://petstore.swagger.wordnik.com/api/user/createWithList
-###### Parameters
-- body
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>body</th>
-        <td>true</td>
-        <td>List of user object</td>
-        <td><a href="#User">List[User]</a></td>
-    </tr>
+
+
+
+<tr>
+    <th>body</th>
+    <td>body</td>
+    <td>no</td>
+    <td>List of user object</td>
+    <td> - </td>
+
+    <td>
+    Array[<a href="#/definitions/User">User</a>]
+    
+    </td>
+
+</tr>
+
+
 </table>
 
-###### Response
-[](#)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
+| default    | successful operation |  - |
 
 
-- - -
-#### **GET** `/user/login`
-##### loginUser 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /user/login
+
+
+### GET
 
 Logs user into the system
 
 
-###### URL
-http://petstore.swagger.wordnik.com/api/user/login
-###### Parameters
-- query
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>Parameter</th>
+        <th>Name</th>
+        <th>Located in</th>
         <th>Required</th>
         <th>Description</th>
-        <th>Data Type</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <th>username</th>
-        <td>true</td>
-        <td>The user name for login</td>
-        <td>string</td>
-    </tr>
-    <tr>
-        <th>password</th>
-        <td>true</td>
-        <td>The password for login in clear text</td>
-        <td>string</td>
-    </tr>
+
+
+
+<tr>
+    <th>username</th>
+    <td>query</td>
+    <td>no</td>
+    <td>The user name for login</td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>password</th>
+    <td>query</td>
+    <td>no</td>
+    <td>The password for login in clear text</td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+
 </table>
 
-###### Response
-[string](#)
 
 
-###### Errors
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
-| 400    | Invalid username/password supplied | - |
+| 200    | successful operation | |
+| 400    | Invalid username/password supplied |  - |
 
 
-- - -
-#### **GET** `/user/logout`
-##### logoutUser 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /user/logout
+
+
+### GET
 
 Logs out current logged in user session
 
 
-###### URL
-http://petstore.swagger.wordnik.com/api/user/logout
-###### Parameters
-
-###### Response
-[](#)
 
 
-###### Errors
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+
+
+
+
+
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
 | Status Code | Reason      | Response Model |
 |-------------|-------------|----------------|
+| default    | successful operation |  - |
 
 
-- - -
-
-## Data Types
 
 
-## <a name="Category">Category</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /user/{username}
+
+
+### GET
+
+Get user by user name
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>type</th>
-        <th>required</th>
-        <th>access</th>
-        <th>description</th>
-        <th>notes</th>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>long</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
+
+
+
+<tr>
+    <th>username</th>
+    <td>path</td>
+    <td>yes</td>
+    <td>The name that needs to be fetched. Use user1 for testing. </td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+
 </table>
 
 
 
-## <a name="Order">Order</a>
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/User">User</a>|
+| 400    | Invalid username supplied |  - |
+| 404    | User not found |  - |
+
+
+
+
+
+### PUT
+
+Updated user
+
+This can only be done by the logged in user.
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>type</th>
-        <th>required</th>
-        <th>access</th>
-        <th>description</th>
-        <th>notes</th>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <td>boolean</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>int</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>Order Status Allowable
-        values:placed, approved, delivered</td>
-        <td>Order Status</td>
-    </tr>
-    <tr>
-        <td>Date</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>long</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>long</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
+
+
+
+<tr>
+    <th>username</th>
+    <td>path</td>
+    <td>yes</td>
+    <td>name that need to be deleted</td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>body</th>
+    <td>body</td>
+    <td>no</td>
+    <td>Updated user object</td>
+    <td> - </td>
+
+    <td>
+    
+    <a href="#/definitions/User">User</a> 
+    </td>
+
+</tr>
+
+
 </table>
 
 
 
-## <a name="Pet">Pet</a>
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 400    | Invalid user supplied |  - |
+| 404    | User not found |  - |
+
+
+
+
+
+
+
+### DELETE
+
+Delete user
+
+This can only be done by the logged in user.
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
 
 <table border="1">
     <tr>
-        <th>type</th>
-        <th>required</th>
-        <th>access</th>
-        <th>description</th>
-        <th>notes</th>
+        <th>Name</th>
+        <th>Located in</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Default</th>
+        <th>Schema</th>
     </tr>
-    <tr>
-        <td>Array[string]</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td><a href="#Category">Category</a></td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td><a href="#Tag">Array[Tag]</a></td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>pet status in the store Allowable
-        values:available, pending, sold</td>
-        <td>pet status in the store</td>
-    </tr>
-    <tr>
-        <td>long</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
+
+
+
+<tr>
+    <th>username</th>
+    <td>path</td>
+    <td>yes</td>
+    <td>The name that needs to be deleted</td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+
 </table>
 
 
 
-## <a name="QueryResultBean">QueryResultBean</a>
+#### Response
+
+**Content-Type: ** application/json, application/xml
+
+
+| Status Code | Reason      | Response Model |
+|-------------|-------------|----------------|
+| 400    | Invalid username supplied |  - |
+| 404    | User not found |  - |
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Definitions
+
+## <a name="/definitions/Category">Category</a>
 
 <table border="1">
     <tr>
+        <th>name</th>
         <th>type</th>
         <th>required</th>
-        <th>access</th>
         <th>description</th>
-        <th>notes</th>
+        <th>example</th>
     </tr>
-    <tr>
-        <td>int</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>int</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
+    
+        <tr>
+            <td>id</td>
+            <td>
+                
+                    
+                    integer (int64)
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>name</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
 </table>
 
-
-
-## <a name="Tag">Tag</a>
+## <a name="/definitions/Order">Order</a>
 
 <table border="1">
     <tr>
+        <th>name</th>
         <th>type</th>
         <th>required</th>
-        <th>access</th>
         <th>description</th>
-        <th>notes</th>
+        <th>example</th>
     </tr>
-    <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>long</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
+    
+        <tr>
+            <td>id</td>
+            <td>
+                
+                    
+                    integer (int64)
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>petId</td>
+            <td>
+                
+                    
+                    integer (int64)
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>quantity</td>
+            <td>
+                
+                    
+                    integer (int32)
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>shipDate</td>
+            <td>
+                
+                    
+                    string (date-time)
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>status</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>Order Status</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>complete</td>
+            <td>
+                
+                    
+                    boolean
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
 </table>
 
-
-
-## <a name="User">User</a>
+## <a name="/definitions/Pet">Pet</a>
 
 <table border="1">
     <tr>
+        <th>name</th>
         <th>type</th>
         <th>required</th>
-        <th>access</th>
         <th>description</th>
-        <th>notes</th>
+        <th>example</th>
     </tr>
+    
+        <tr>
+            <td>id</td>
+            <td>
+                
+                    
+                    integer (int64)
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>category</td>
+            <td>
+                
+                    <a href="#/definitions/Category">Category</a>
+                    
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>name</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>required</td>
+            <td>-</td>
+            <td>doggie</td>
+        </tr>
+    
+        <tr>
+            <td>photoUrls</td>
+            <td>
+                
+                
+                array[string]
+                
+            </td>
+            <td>required</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>tags</td>
+            <td>
+                
+                
+                    array[<a href="#/definitions/Tag">Tag</a>]
+                
+                
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>status</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>pet status in the store</td>
+            <td></td>
+        </tr>
+    
+</table>
+
+## <a name="/definitions/Tag">Tag</a>
+
+<table border="1">
     <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <th>name</th>
+        <th>type</th>
+        <th>required</th>
+        <th>description</th>
+        <th>example</th>
     </tr>
+    
+        <tr>
+            <td>id</td>
+            <td>
+                
+                    
+                    integer (int64)
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>name</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+</table>
+
+## <a name="/definitions/User">User</a>
+
+<table border="1">
     <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
+        <th>name</th>
+        <th>type</th>
+        <th>required</th>
+        <th>description</th>
+        <th>example</th>
     </tr>
-    <tr>
-        <td>int</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>User Status Allowable
-        values:1-registered, 2-active, 3-closed</td>
-        <td>User Status</td>
-    </tr>
-    <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>string</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
-    <tr>
-        <td>long</td>
-        <td>optional</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-    </tr>
+    
+        <tr>
+            <td>id</td>
+            <td>
+                
+                    
+                    integer (int64)
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>username</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>firstName</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>lastName</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>email</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>password</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>phone</td>
+            <td>
+                
+                    
+                    string
+                
+            </td>
+            <td>optional</td>
+            <td>-</td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td>userStatus</td>
+            <td>
+                
+                    
+                    integer (int32)
+                
+            </td>
+            <td>optional</td>
+            <td>User Status</td>
+            <td></td>
+        </tr>
+    
 </table>
 
 

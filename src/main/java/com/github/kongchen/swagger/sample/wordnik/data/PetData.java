@@ -1,5 +1,5 @@
 /**
- *  Copyright 2013 Wordnik, Inc.
+ *  Copyright 2014 Reverb Technologies, Inc.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 
 package com.github.kongchen.swagger.sample.wordnik.data;
 
-import com.github.kongchen.swagger.sample.wordnik.model.*;
+import com.github.kongchen.swagger.sample.wordnik.model.Category;
+import com.github.kongchen.swagger.sample.wordnik.model.Pet;
+import com.github.kongchen.swagger.sample.wordnik.model.Tag;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -65,9 +67,20 @@ public class PetData {
     return null;
   }
 
+  public void deletePet(long petId) {
+    if(pets.size() > 0) {
+      for (int i = pets.size(); i >= 0; i++) {
+        Pet pet = pets.get(i);
+        if(pet.getId() == petId) {
+          pets.remove(i);
+        }
+      }
+    }
+  }
+
   public List<Pet> findPetByStatus(String status) {
     String[] statues = status.split(",");
-    List<Pet> result = new ArrayList<Pet>();
+    List<Pet> result = new java.util.ArrayList<Pet>();
     for (Pet pet : pets) {
       for (String s : statues) {
         if (s.equals(pet.getStatus())) {
@@ -80,7 +93,7 @@ public class PetData {
 
   public List<Pet> findPetByTags(String tags) {
     String[] tagList = tags.split(",");
-    List<Pet> result = new ArrayList<Pet>();
+    List<Pet> result = new java.util.ArrayList<Pet>();
     for (Pet pet : pets) {
       if (null != pet.getTags()) {
         for (Tag tag : pet.getTags()) {
@@ -94,7 +107,16 @@ public class PetData {
     return result;
   }
 
-  public void addPet(Pet pet) {
+  public Pet addPet(Pet pet) {
+    if(pet.getId() == 0) {
+      long maxId = 0;
+      for (int i = pets.size() - 1; i >= 0; i--) {
+        if(pets.get(i).getId() > maxId) {
+          maxId = pets.get(i).getId();
+        }
+      }
+      pet.setId(maxId + 1);
+    }
     if (pets.size() > 0) {
       for (int i = pets.size() - 1; i >= 0; i--) {
         if (pets.get(i).getId() == pet.getId()) {
@@ -103,6 +125,7 @@ public class PetData {
       }
     }
     pets.add(pet);
+    return pet;
   }
 
   static Pet createPet(long id, Category cat, String name, String[] urls,
@@ -118,7 +141,7 @@ public class PetData {
       }
       pet.setPhotoUrls(urlObjs);
     }
-    List<Tag> tagObjs = new ArrayList<Tag>();
+    List<Tag> tagObjs = new java.util.ArrayList<Tag>();
     int i = 0;
     if (null != tags) {
       for (String tagString : tags) {

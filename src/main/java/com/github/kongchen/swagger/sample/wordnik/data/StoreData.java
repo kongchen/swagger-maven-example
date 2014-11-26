@@ -1,5 +1,5 @@
 /**
- *  Copyright 2013 Wordnik, Inc.
+ *  Copyright 2014 Reverb Technologies, Inc.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 package com.github.kongchen.swagger.sample.wordnik.data;
 
-import com.github.kongchen.swagger.sample.wordnik.model.*;
+import com.github.kongchen.swagger.sample.wordnik.model.Order;
+
 import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class StoreData {
     return null;
   }
 
-  public void placeOrder(Order order) {
+  public Order placeOrder(Order order) {
     if (orders.size() > 0) {
       for (int i = orders.size() - 1; i >= 0; i--) {
         if (orders.get(i).getId() == order.getId()) {
@@ -55,6 +56,7 @@ public class StoreData {
       }
     }
     orders.add(order);
+    return order;
   }
 
   public void deleteOrder(long orderId) {

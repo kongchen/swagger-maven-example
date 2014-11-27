@@ -49,12 +49,12 @@ public class PetResource {
       @ApiResponse(code = 404, message = "Pet not found") })
   public Response getPetById(
       @ApiParam(value = "ID of pet that needs to be fetched", allowableValues = "range[1,5]", required = true) @PathParam("petId") Long petId)
-      throws com.wordnik.sample.exception.NotFoundException {
+      throws com.github.kongchen.swagger.sample.wordnik.exception.NotFoundException {
     Pet pet = petData.getPetbyId(petId);
     if (null != pet) {
       return Response.ok().entity(pet).build();
     } else {
-      throw new com.wordnik.sample.exception.NotFoundException(404, "Pet not found");
+      throw new com.github.kongchen.swagger.sample.wordnik.exception.NotFoundException(404, "Pet not found");
     }
   }
 
@@ -129,6 +129,6 @@ public class PetResource {
    @ApiParam(value = "Updated status of the pet", required = false)@FormParam("status") String status) {
     System.out.println(name);
     System.out.println(status);
-    return Response.ok().entity(new com.wordnik.sample.model.ApiResponse(200, "SUCCESS")).build();
+    return Response.ok().entity(new com.github.kongchen.swagger.sample.wordnik.model.ApiResponse(200, "SUCCESS")).build();
   }
 }

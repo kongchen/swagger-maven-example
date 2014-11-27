@@ -119,4 +119,16 @@
         <jersey2-version>2.4.1</jersey2-version>
         <logback-version>1.0.1</logback-version>
     </properties>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sonatype-snapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

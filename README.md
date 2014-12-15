@@ -2,7 +2,7 @@ Swagger Maven Plugin Example [![Build Status](https://travis-ci.org/kongchen/swa
 
 This project is an example of using [Swagger-maven-plugin](https://github.com/kongchen/swagger-maven-plugin).
 
-You can check the detail configuration in [pom.xml](https://github.com/kongchen/swagger-maven-example/blob/master/pom.xml#L40-L49)
+You can check the detail configuration in [pom.xml](https://github.com/kongchen/swagger-maven-example/blob/master/pom.xml)
 
 Clone the example in local and then launch:
 ```

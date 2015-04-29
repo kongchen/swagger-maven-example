@@ -13,10 +13,11 @@
             <plugin>
                 <groupId>com.github.kongchen</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
-                <version>3.0-SNAPSHOT</version>
+                <version>3.0.0</version>
                 <configuration>
                     <apiSources>
-                        <apiSource>
+                      <apiSource>
+                            <springmvc>false</springmvc>
                             <locations>com.github.kongchen.swagger.sample.wordnik.resource</locations>
                             <schemes>http,https</schemes>
                             <host>petstore.swagger.wordnik.com</host>

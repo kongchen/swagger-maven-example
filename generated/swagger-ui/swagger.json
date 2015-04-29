@@ -17,6 +17,13 @@
   },
   "host" : "petstore.swagger.wordnik.com",
   "basePath" : "/api",
+  "tags" : [ {
+    "name" : "pet"
+  }, {
+    "name" : "store"
+  }, {
+    "name" : "user"
+  } ],
   "schemes" : [ "http", "https" ],
   "paths" : {
     "/pet" : {
@@ -26,7 +33,7 @@
         "description" : "",
         "operationId" : "addPet",
         "consumes" : [ "application/json", "application/xml" ],
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
@@ -51,7 +58,7 @@
         "description" : "",
         "operationId" : "updatePet",
         "consumes" : [ "application/json", "application/xml" ],
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
@@ -83,18 +90,19 @@
         "summary" : "Finds Pets by status",
         "description" : "Multiple status values can be provided with comma seperated strings",
         "operationId" : "findPetsByStatus",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "query",
           "name" : "status",
+          "in" : "query",
           "description" : "Status values that need to be considered for filter",
-          "required" : false,
+          "required" : true,
           "type" : "array",
           "items" : {
             "type" : "string"
           },
           "collectionFormat" : "multi",
-          "default" : "available"
+          "default" : "available",
+          "enum" : [ "available", "pending", "sold" ]
         } ],
         "responses" : {
           "200" : {
@@ -121,12 +129,12 @@
         "summary" : "Finds Pets by tags",
         "description" : "Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 for testing.",
         "operationId" : "findPetsByTags",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "query",
           "name" : "tags",
+          "in" : "query",
           "description" : "Tags to filter by",
-          "required" : false,
+          "required" : true,
           "type" : "array",
           "items" : {
             "type" : "string"
@@ -158,10 +166,10 @@
         "summary" : "Find pet by ID",
         "description" : "Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions",
         "operationId" : "getPetById",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "path",
           "name" : "petId",
+          "in" : "path",
           "description" : "ID of pet that needs to be fetched",
           "required" : true,
           "type" : "integer",
@@ -193,24 +201,24 @@
         "description" : "",
         "operationId" : "updatePetWithForm",
         "consumes" : [ "application/x-www-form-urlencoded" ],
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "path",
           "name" : "petId",
+          "in" : "path",
           "description" : "ID of pet that needs to be updated",
           "required" : true,
           "type" : "string"
         }, {
-          "in" : "formData",
           "name" : "name",
+          "in" : "formData",
           "description" : "Updated name of the pet",
-          "required" : true,
+          "required" : false,
           "type" : "string"
         }, {
-          "in" : "formData",
           "name" : "status",
+          "in" : "formData",
           "description" : "Updated status of the pet",
-          "required" : true,
+          "required" : false,
           "type" : "string"
         } ],
         "responses" : {
@@ -227,16 +235,17 @@
         "summary" : "Deletes a pet",
         "description" : "",
         "operationId" : "deletePet",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "header",
           "name" : "api_key",
+          "in" : "header",
           "description" : "",
-          "required" : true,
-          "type" : "string"
+          "required" : false,
+          "type" : "string",
+          "default" : ""
         }, {
-          "in" : "path",
           "name" : "petId",
+          "in" : "path",
           "description" : "Pet id to delete",
           "required" : true,
           "type" : "integer",
@@ -258,7 +267,7 @@
         "summary" : "Place an order for a pet",
         "description" : "",
         "operationId" : "placeOrder",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
@@ -287,10 +296,10 @@
         "summary" : "Find purchase order by ID",
         "description" : "For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions",
         "operationId" : "getOrderById",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "path",
           "name" : "orderId",
+          "in" : "path",
           "description" : "ID of pet that needs to be fetched",
           "required" : true,
           "type" : "string"
@@ -315,10 +324,10 @@
         "summary" : "Delete purchase order by ID",
         "description" : "For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors",
         "operationId" : "deleteOrder",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "path",
           "name" : "orderId",
+          "in" : "path",
           "description" : "ID of the order that needs to be deleted",
           "required" : true,
           "type" : "string"
@@ -339,7 +348,7 @@
         "summary" : "Create user",
         "description" : "This can only be done by the logged in user.",
         "operationId" : "createUser",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
@@ -362,7 +371,7 @@
         "summary" : "Creates list of users with given input array",
         "description" : "",
         "operationId" : "createUsersWithArrayInput",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
@@ -371,7 +380,7 @@
           "schema" : {
             "type" : "array",
             "items" : {
-              "$ref" : "User"
+              "$ref" : "#/definitions/User"
             }
           }
         } ],
@@ -388,7 +397,7 @@
         "summary" : "Creates list of users with given input array",
         "description" : "",
         "operationId" : "createUsersWithListInput",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
@@ -414,18 +423,18 @@
         "summary" : "Logs user into the system",
         "description" : "",
         "operationId" : "loginUser",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "query",
           "name" : "username",
+          "in" : "query",
           "description" : "The user name for login",
-          "required" : false,
+          "required" : true,
           "type" : "string"
         }, {
-          "in" : "query",
           "name" : "password",
+          "in" : "query",
           "description" : "The password for login in clear text",
-          "required" : false,
+          "required" : true,
           "type" : "string"
         } ],
         "responses" : {
@@ -447,7 +456,7 @@
         "summary" : "Logs out current logged in user session",
         "description" : "",
         "operationId" : "logoutUser",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "responses" : {
           "default" : {
             "description" : "successful operation"
@@ -461,10 +470,10 @@
         "summary" : "Get user by user name",
         "description" : "",
         "operationId" : "getUserByName",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "path",
           "name" : "username",
+          "in" : "path",
           "description" : "The name that needs to be fetched. Use user1 for testing. ",
           "required" : true,
           "type" : "string"
@@ -489,10 +498,10 @@
         "summary" : "Updated user",
         "description" : "This can only be done by the logged in user.",
         "operationId" : "updateUser",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "path",
           "name" : "username",
+          "in" : "path",
           "description" : "name that need to be deleted",
           "required" : true,
           "type" : "string"
@@ -519,10 +528,10 @@
         "summary" : "Delete user",
         "description" : "This can only be done by the logged in user.",
         "operationId" : "deleteUser",
-        "produces" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/xml", "application/json" ],
         "parameters" : [ {
-          "in" : "path",
           "name" : "username",
+          "in" : "path",
           "description" : "The name that needs to be deleted",
           "required" : true,
           "type" : "string"
@@ -548,6 +557,9 @@
         "name" : {
           "type" : "string"
         }
+      },
+      "xml" : {
+        "name" : "Category"
       }
     },
     "Order" : {
@@ -570,11 +582,16 @@
         },
         "status" : {
           "type" : "string",
-          "description" : "Order Status"
+          "description" : "Order Status",
+          "enum" : [ "placed", "approved", "delivered" ]
         },
         "complete" : {
-          "type" : "boolean"
+          "type" : "boolean",
+          "default" : false
         }
+      },
+      "xml" : {
+        "name" : "Order"
       }
     },
     "Pet" : {
@@ -585,7 +602,7 @@
           "format" : "int64"
         },
         "category" : {
-          "$ref" : "Category"
+          "$ref" : "#/definitions/Category"
         },
         "name" : {
           "type" : "string",
@@ -593,20 +610,32 @@
         },
         "photoUrls" : {
           "type" : "array",
+          "xml" : {
+            "name" : "photoUrl",
+            "wrapped" : true
+          },
           "items" : {
             "type" : "string"
           }
         },
         "tags" : {
           "type" : "array",
+          "xml" : {
+            "name" : "tag",
+            "wrapped" : true
+          },
           "items" : {
-            "$ref" : "Tag"
+            "$ref" : "#/definitions/Tag"
           }
         },
         "status" : {
           "type" : "string",
-          "description" : "pet status in the store"
+          "description" : "pet status in the store",
+          "enum" : [ "available", "pending", "sold" ]
         }
+      },
+      "xml" : {
+        "name" : "Pet"
       }
     },
     "Tag" : {
@@ -618,6 +647,9 @@
         "name" : {
           "type" : "string"
         }
+      },
+      "xml" : {
+        "name" : "Tag"
       }
     },
     "User" : {
@@ -649,6 +681,9 @@
           "format" : "int32",
           "description" : "User Status"
         }
+      },
+      "xml" : {
+        "name" : "User"
       }
     }
   }

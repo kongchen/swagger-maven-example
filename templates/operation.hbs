@@ -1,5 +1,5 @@
 {{#deprecated}}-deprecated-{{/deprecated}}
-{{summary}}
+<a id="{{operationId}}">{{summary}}</a>
 
 {{description}}
 
@@ -41,11 +41,11 @@
     <th>{{name}}</th>
     <td>{{in}}</td>
     <td>{{#if required}}yes{{else}}no{{/if}}</td>
-    <td>{{description}}</td>
+    <td>{{description}}{{#if pattern}} (**Pattern**: `{{pattern}}`){{/if}}</td>
     <td> - </td>
 {{#ifeq in "body"}}
     <td>
-    {{#ifeq schema.type "array"}}Array[<a href="#/definitions/{{basename schema.items.$ref}}">{{basename schema.items.$ref}}</a>]{{/ifeq}}
+    {{#ifeq schema.type "array"}}Array[<a href="{{schema.items.$ref}}">{{basename schema.items.$ref}}</a>]{{/ifeq}}
     {{#schema.$ref}}<a href="{{schema.$ref}}">{{basename schema.$ref}}</a> {{/schema.$ref}}
     </td>
 {{else}}

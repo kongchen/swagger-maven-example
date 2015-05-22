@@ -20,9 +20,9 @@
   "tags" : [ {
     "name" : "pet"
   }, {
-    "name" : "store"
-  }, {
     "name" : "user"
+  }, {
+    "name" : "store"
   } ],
   "schemes" : [ "http", "https" ],
   "paths" : {
@@ -38,7 +38,7 @@
           "in" : "body",
           "name" : "body",
           "description" : "Pet object that needs to be added to the store",
-          "required" : false,
+          "required" : true,
           "schema" : {
             "$ref" : "#/definitions/Pet"
           }
@@ -63,7 +63,7 @@
           "in" : "body",
           "name" : "body",
           "description" : "Pet object that needs to be added to the store",
-          "required" : false,
+          "required" : true,
           "schema" : {
             "$ref" : "#/definitions/Pet"
           }
@@ -272,7 +272,7 @@
           "in" : "body",
           "name" : "body",
           "description" : "order placed for purchasing the pet",
-          "required" : false,
+          "required" : true,
           "schema" : {
             "$ref" : "#/definitions/Order"
           }
@@ -353,7 +353,7 @@
           "in" : "body",
           "name" : "body",
           "description" : "Created user object",
-          "required" : false,
+          "required" : true,
           "schema" : {
             "$ref" : "#/definitions/User"
           }
@@ -376,7 +376,7 @@
           "in" : "body",
           "name" : "body",
           "description" : "List of user object",
-          "required" : false,
+          "required" : true,
           "schema" : {
             "type" : "array",
             "items" : {
@@ -402,7 +402,7 @@
           "in" : "body",
           "name" : "body",
           "description" : "List of user object",
-          "required" : false,
+          "required" : true,
           "schema" : {
             "type" : "array",
             "items" : {
@@ -509,7 +509,7 @@
           "in" : "body",
           "name" : "body",
           "description" : "Updated user object",
-          "required" : false,
+          "required" : true,
           "schema" : {
             "$ref" : "#/definitions/User"
           }

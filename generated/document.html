@@ -28,6 +28,8 @@ This is a sample for swagger-maven-plugin
 
 
 
+
+
 # APIs
 
 
@@ -38,7 +40,7 @@ This is a sample for swagger-maven-plugin
 
 ### PUT
 
-Update an existing pet
+<a id="updatePet">Update an existing pet</a>
 
 
 
@@ -79,7 +81,7 @@ Update an existing pet
 <tr>
     <th>body</th>
     <td>body</td>
-    <td>no</td>
+    <td>yes</td>
     <td>Pet object that needs to be added to the store</td>
     <td> - </td>
 
@@ -113,7 +115,7 @@ Update an existing pet
 ### POST
 
 
-Add a new pet to the store
+<a id="addPet">Add a new pet to the store</a>
 
 
 
@@ -154,7 +156,7 @@ Add a new pet to the store
 <tr>
     <th>body</th>
     <td>body</td>
-    <td>no</td>
+    <td>yes</td>
     <td>Pet object that needs to be added to the store</td>
     <td> - </td>
 
@@ -198,7 +200,7 @@ Add a new pet to the store
 
 ### GET
 
-Finds Pets by status
+<a id="findPetsByStatus">Finds Pets by status</a>
 
 Multiple status values can be provided with comma seperated strings
 
@@ -285,7 +287,7 @@ Multiple status values can be provided with comma seperated strings
 
 ### GET
 
-Finds Pets by tags
+<a id="findPetsByTags">Finds Pets by tags</a>
 
 Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 for testing.
 
@@ -372,7 +374,7 @@ Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 
 
 ### GET
 
-Find pet by ID
+<a id="getPetById">Find pet by ID</a>
 
 Returns a pet when ID &lt; 10.  ID &gt; 10 or nonintegers will simulate API error conditions
 
@@ -452,7 +454,7 @@ Returns a pet when ID &lt; 10.  ID &gt; 10 or nonintegers will simulate API erro
 ### POST
 
 
-Updates a pet in the store with form data
+<a id="updatePetWithForm">Updates a pet in the store with form data</a>
 
 
 
@@ -550,7 +552,7 @@ Updates a pet in the store with form data
 
 ### DELETE
 
-Deletes a pet
+<a id="deletePet">Deletes a pet</a>
 
 
 
@@ -648,7 +650,7 @@ Deletes a pet
 ### POST
 
 
-Place an order for a pet
+<a id="placeOrder">Place an order for a pet</a>
 
 
 
@@ -679,7 +681,7 @@ Place an order for a pet
 <tr>
     <th>body</th>
     <td>body</td>
-    <td>no</td>
+    <td>yes</td>
     <td>order placed for purchasing the pet</td>
     <td> - </td>
 
@@ -724,7 +726,7 @@ Place an order for a pet
 
 ### GET
 
-Find purchase order by ID
+<a id="getOrderById">Find purchase order by ID</a>
 
 For valid response try integer IDs with value &lt;= 5 or &gt; 10. Other values will generated exceptions
 
@@ -791,7 +793,7 @@ For valid response try integer IDs with value &lt;= 5 or &gt; 10. Other values w
 
 ### DELETE
 
-Delete purchase order by ID
+<a id="deleteOrder">Delete purchase order by ID</a>
 
 For valid response try integer IDs with value &lt; 1000. Anything above 1000 or nonintegers will generate API errors
 
@@ -868,7 +870,7 @@ For valid response try integer IDs with value &lt; 1000. Anything above 1000 or 
 ### POST
 
 
-Create user
+<a id="createUser">Create user</a>
 
 This can only be done by the logged in user.
 
@@ -899,7 +901,7 @@ This can only be done by the logged in user.
 <tr>
     <th>body</th>
     <td>body</td>
-    <td>no</td>
+    <td>yes</td>
     <td>Created user object</td>
     <td> - </td>
 
@@ -948,7 +950,7 @@ This can only be done by the logged in user.
 ### POST
 
 
-Creates list of users with given input array
+<a id="createUsersWithArrayInput">Creates list of users with given input array</a>
 
 
 
@@ -979,7 +981,7 @@ Creates list of users with given input array
 <tr>
     <th>body</th>
     <td>body</td>
-    <td>no</td>
+    <td>yes</td>
     <td>List of user object</td>
     <td> - </td>
 
@@ -1028,7 +1030,7 @@ Creates list of users with given input array
 ### POST
 
 
-Creates list of users with given input array
+<a id="createUsersWithListInput">Creates list of users with given input array</a>
 
 
 
@@ -1059,7 +1061,7 @@ Creates list of users with given input array
 <tr>
     <th>body</th>
     <td>body</td>
-    <td>no</td>
+    <td>yes</td>
     <td>List of user object</td>
     <td> - </td>
 
@@ -1103,7 +1105,7 @@ Creates list of users with given input array
 
 ### GET
 
-Logs user into the system
+<a id="loginUser">Logs user into the system</a>
 
 
 
@@ -1194,7 +1196,7 @@ Logs user into the system
 
 ### GET
 
-Logs out current logged in user session
+<a id="logoutUser">Logs out current logged in user session</a>
 
 
 
@@ -1246,7 +1248,7 @@ Logs out current logged in user session
 
 ### GET
 
-Get user by user name
+<a id="getUserByName">Get user by user name</a>
 
 
 
@@ -1309,7 +1311,7 @@ Get user by user name
 
 ### PUT
 
-Updated user
+<a id="updateUser">Updated user</a>
 
 This can only be done by the logged in user.
 
@@ -1353,7 +1355,7 @@ This can only be done by the logged in user.
 <tr>
     <th>body</th>
     <td>body</td>
-    <td>no</td>
+    <td>yes</td>
     <td>Updated user object</td>
     <td> - </td>
 
@@ -1387,7 +1389,7 @@ This can only be done by the logged in user.
 
 ### DELETE
 
-Delete user
+<a id="deleteUser">Delete user</a>
 
 This can only be done by the logged in user.
 
@@ -1615,7 +1617,7 @@ This can only be done by the logged in user.
             <td>category</td>
             <td>
                 
-                    <a href="#/definitions/#/definitions/Category">#/definitions/Category</a>
+                    <a href="#/definitions/Category">Category</a>
                     
                 
             </td>
@@ -1655,7 +1657,7 @@ This can only be done by the logged in user.
             <td>
                 
                 
-                    array[<a href="#/definitions/#/definitions/Tag">#/definitions/Tag</a>]
+                    array[<a href="#/definitions/Tag">Tag</a>]
                 
                 
                 

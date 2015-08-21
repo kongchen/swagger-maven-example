@@ -16,7 +16,7 @@
 
 package com.github.kongchen.swagger.sample.wordnik.resource;
 
-import com.wordnik.swagger.annotations.*;
+import io.swagger.annotations.*;
 import com.github.kongchen.swagger.sample.wordnik.data.StoreData;
 import com.github.kongchen.swagger.sample.wordnik.model.Order;
 import com.github.kongchen.swagger.sample.wordnik.exception.NotFoundException;

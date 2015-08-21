@@ -16,7 +16,7 @@
 
 package com.github.kongchen.swagger.sample.wordnik.resource;
 
-import com.wordnik.swagger.annotations.*;
+import io.swagger.annotations.*;
 import com.github.kongchen.swagger.sample.wordnik.data.UserData;
 import com.github.kongchen.swagger.sample.wordnik.model.User;
 import com.github.kongchen.swagger.sample.wordnik.exception.ApiException;

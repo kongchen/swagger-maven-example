@@ -13,7 +13,7 @@
             <plugin>
                 <groupId>com.github.kongchen</groupId>
                 <artifactId>swagger-maven-plugin</artifactId>
-                <version>3.0.1-SNAPSHOT</version>
+                <version>3.1.0</version>
                 <configuration>
                     <apiSources>
                       <apiSource>
@@ -46,6 +46,11 @@
                             <templatePath>${basedir}/templates/strapdown.html.hbs</templatePath>
                             <outputPath>${basedir}/generated/document.html</outputPath>
                             <swaggerDirectory>generated/swagger-ui</swaggerDirectory>
+                            <securityDefinitions>
+                                <securityDefinition>
+                                    <json>/securityDefinition.json</json>
+                                </securityDefinition>
+                            </securityDefinitions>
                         </apiSource>
                     </apiSources>
                 </configuration>
@@ -76,10 +81,10 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>com.wordnik</groupId>
+            <groupId>io.swagger</groupId>
             <artifactId>swagger-core</artifactId>
             <scope>compile</scope>
-            <version>1.5.1-M2</version>
+            <version>1.5.3</version>
             <exclusions>
                 <exclusion>
                     <groupId>javax.ws.rs</groupId>

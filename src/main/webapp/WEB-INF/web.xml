@@ -9,16 +9,16 @@
     <init-param>
       <param-name>jersey.config.server.provider.packages</param-name>
       <param-value>
-          com.wordnik.swagger.jaxrs.json,
+          io.swagger.jaxrs.json,
           com.github.kongchen.swagger.sample.wordnik.resource
       </param-value>
     </init-param>
     <init-param>
       <param-name>jersey.config.server.provider.classnames</param-name>
       <param-value>
-        com.wordnik.swagger.jersey.listing.ApiListingResourceJSON,
-        com.wordnik.swagger.jersey.listing.JerseyApiDeclarationProvider,
-        com.wordnik.swagger.jersey.listing.JerseyResourceListingProvider
+        io.swagger.jersey.listing.ApiListingResourceJSON,
+        io.swagger.jersey.listing.JerseyApiDeclarationProvider,
+        io.swagger.jersey.listing.JerseyResourceListingProvider
       </param-value>
     </init-param>
     <init-param>
@@ -35,7 +35,7 @@
 
   <servlet>
     <servlet-name>Jersey2Config</servlet-name>
-    <servlet-class>com.wordnik.swagger.jersey.config.JerseyJaxrsConfig</servlet-class>
+    <servlet-class>io.swagger.jersey.config.JerseyJaxrsConfig</servlet-class>
     <init-param>
       <param-name>api.version</param-name>
       <param-value>1.0.0</param-value>

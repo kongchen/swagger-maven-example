@@ -28,6 +28,79 @@ This is a sample for swagger-maven-plugin
 
 
 
+# Security Definitions
+
+
+### api_key
+
+
+
+<table>
+    <tr>
+        <th>type</th>
+        <th colspan="2">apiKey</th>
+    </tr>
+
+
+        <tr>
+            <th>name</th>
+            <th colspan="2">api_key</th>
+        </tr>
+
+
+        <tr>
+            <th>in</th>
+            <th colspan="2">HEADER</th>
+        </tr>
+
+</table>
+
+
+
+
+### petstore_auth
+
+
+<table>
+    <tr>
+        <th>type</th>
+        <th colspan="2">oauth2</th>
+    </tr>
+
+
+        <tr>
+            <th>authorizationUrl</th>
+            <th colspan="2">http://swagger.io/api/oauth/dialog</th>
+        </tr>
+
+
+        <tr>
+            <th>flow</th>
+            <th colspan="2">implicit</th>
+        </tr>
+
+
+
+    <tr>
+        <td rowspan="3">scopes</td>
+
+            <td>write:pets</td>
+            <td>modify pets in your account</td>
+        </tr>
+        <tr>
+
+            <td>read:pets</td>
+            <td>read your pets</td>
+        </tr>
+        <tr>
+
+    </tr>
+
+</table>
+
+
+
+
 
 
 # APIs
@@ -245,7 +318,7 @@ Multiple status values can be provided with comma seperated strings
     <td> - </td>
 
     
-            <td>Array[string] (multi)</td>
+            <td>Array[string] (csv)</td>
     
 
 </tr>
@@ -332,7 +405,7 @@ Muliple tags can be provided with comma seperated strings. Use tag1, tag2, tag3 
     <td> - </td>
 
     
-            <td>Array[string] (multi)</td>
+            <td>Array[string] (csv)</td>
     
 
 </tr>

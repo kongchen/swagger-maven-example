@@ -17,9 +17,8 @@
 package com.github.kongchen.swagger.sample.wordnik.resource;
 
 import com.github.kongchen.swagger.sample.wordnik.data.PetData;
-import com.wordnik.swagger.annotations.*;
 import com.github.kongchen.swagger.sample.wordnik.model.Pet;
-import com.wordnik.swagger.annotations.ApiResponse;
+import io.swagger.annotations.*;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.MediaType;
@@ -27,7 +26,7 @@ import javax.ws.rs.*;
 
 @Path("/pet")
 @Api(value = "/pet", description = "Operations about pets", authorizations = {
-  @Authorization(value = "petstore_auth", type = "oauth2",
+  @Authorization(value = "petstore_auth",
   scopes = {
     @AuthorizationScope(scope = "write:pets", description = "modify pets in your account"),
     @AuthorizationScope(scope = "read:pets", description = "read your pets")
@@ -40,10 +39,10 @@ public class PetResource {
 
   @GET
   @Path("/{petId}")
-  @ApiOperation(value = "Find pet by ID", 
+  @ApiOperation(value = "Find pet by ID",
     notes = "Returns a pet when ID < 10.  ID > 10 or nonintegers will simulate API error conditions", 
     response = Pet.class,
-    authorizations = @Authorization(value = "api_key", type = "api_key")
+    authorizations = @Authorization(value = "api_key")
   )
   @ApiResponses(value = { @ApiResponse(code = 400, message = "Invalid ID supplied"),
       @ApiResponse(code = 404, message = "Pet not found") })

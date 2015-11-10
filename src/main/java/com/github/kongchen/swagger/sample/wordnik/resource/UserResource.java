@@ -16,10 +16,10 @@
 
 package com.github.kongchen.swagger.sample.wordnik.resource;
 
-import com.wordnik.swagger.annotations.*;
 import com.github.kongchen.swagger.sample.wordnik.data.UserData;
 import com.github.kongchen.swagger.sample.wordnik.model.User;
 import com.github.kongchen.swagger.sample.wordnik.exception.ApiException;
+import io.swagger.annotations.*;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.*;

@@ -16,7 +16,7 @@
 
 package com.github.kongchen.swagger.sample.wordnik.model;
 
-import com.wordnik.swagger.annotations.*;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.List;
 import java.util.ArrayList;

@@ -118,7 +118,7 @@
     <properties>
         <jetty-version>9.0.7.v20131107</jetty-version>
         <jersey2-version>2.4.1</jersey2-version>
-        <logback-version>1.0.1</logback-version>
+        <logback-version>1.2.0</logback-version>
     </properties>
     <pluginRepositories>
         <pluginRepository>
